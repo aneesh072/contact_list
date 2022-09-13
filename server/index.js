@@ -24,6 +24,16 @@ app.get('/addContact', async (req, res) => {
   res.send('Success');
 });
 
+app.get('/read', (req, res) => {
+  ContactModel.find({}, (error, result) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 app.listen(3003, () => {
   console.log('You are connected');
 });
