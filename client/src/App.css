@@ -52,3 +52,25 @@
   background-color: #4caf50;
   color: white;
 }
+
+.contact-btn {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: -12px 0 0 -12px;
+  justify-content: center;
+  align-items: center;
+}
+.contact-btn #update {
+  background-color: rgb(220, 220, 28);
+  border: none;
+  border-radius: 10px;
+  padding: 4px;
+  margin-right: 10px;
+}
+
+.contact-btn #delete {
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  padding: 4px;
+}

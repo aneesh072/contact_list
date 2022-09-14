@@ -24,6 +24,16 @@ const Form = () => {
       });
   };
 
+  const deleteContact = (id) => {
+    Axios.delete(`http://localhost:3003/delete/${id}`).then(() => {
+      setContactList(
+        contactList.filter((val) => {
+          return val._id != id;
+        })
+      );
+    });
+  };
+
   useEffect(() => {
     Axios.get('http://localhost:3003/read')
       .then((response) => {
@@ -81,10 +91,11 @@ const Form = () => {
       <div className="contactList">
         <table className="contacts">
           <tbody>
-            <tr>
+            <tr className="table-head">
               <th>Name</th>
               <th>Age</th>
               <th>Mobile</th>
+              <th></th>
             </tr>
             {contactList.map((val, key) => {
               return (
@@ -92,6 +103,17 @@ const Form = () => {
                   <td>{val.name}</td>
                   <td>{val.address}</td>
                   <td>{val.mobile}</td>
+                  <td>
+                    <div className="contact-btn">
+                      <button id="update">UPDATE</button>
+                      <button
+                        id="delete"
+                        onClick={() => deleteContact(val._id)}
+                      >
+                        DELETE
+                      </button>
+                    </div>
+                  </td>
                 </tr>
               );
             })}

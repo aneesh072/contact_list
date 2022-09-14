@@ -35,6 +35,12 @@ app.get('/read', (req, res) => {
   });
 });
 
+app.delete('/delete/:id', async (req, res) => {
+  const id = req.params.id;
+  await ContactModel.findByIdAndDelete(id).exec();
+  res.send('Itme Deleted');
+});
+
 app.listen(3003, () => {
   console.log('You are connected');
 });
