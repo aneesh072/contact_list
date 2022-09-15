@@ -35,6 +35,25 @@ app.get('/read', (req, res) => {
   });
 });
 
+app.put('/update', async (req, res) => {
+  const newName = req.body.newName;
+  const newAddress = req.body.newAddress;
+  const newMobile = req.body.newMobile;
+  const id = req.body.id;
+
+  try {
+    await ContactModel.findById(id, (err, contactToUpdate) => {
+      contactToUpdate.name = String(newName);
+      contactToUpdate.address = String(newAddress);
+      contactToUpdate.mobile = Number(newMobile);
+      contactToUpdate.save();
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  res.send('Updated');
+});
+
 app.delete('/delete/:id', async (req, res) => {
   const id = req.params.id;
   await ContactModel.findByIdAndDelete(id).exec();

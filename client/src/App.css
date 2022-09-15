@@ -19,8 +19,8 @@
 .contactList {
   justify-content: center;
   align-items: center;
-  display: flex;
-  margin-top: 20px;
+  background-color: aqua;
+  height: 100vh;
 }
 
 .contacts {
@@ -60,6 +60,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .contact-btn #update {
   background-color: rgb(220, 220, 28);
   border: none;
