@@ -1,4 +1,6 @@
 import React from 'react';
+import { MdDeleteForever } from 'react-icons/md';
+import { GrUpdate } from 'react-icons/gr';
 
 const ReadOnlyRows = ({ contact, key, deleteContact, handleEditClick }) => {
   return (
@@ -12,10 +14,10 @@ const ReadOnlyRows = ({ contact, key, deleteContact, handleEditClick }) => {
             id="update"
             onClick={(event) => handleEditClick(event, contact)}
           >
-            UPDATE
+            <GrUpdate />
           </button>
           <button id="delete" onClick={() => deleteContact(contact._id)}>
-            DELETE
+            <MdDeleteForever />
           </button>
         </div>
       </td>

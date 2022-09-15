@@ -70,6 +70,10 @@ const Form = () => {
       });
   }, []);
 
+  const handleCancleClick = () => {
+    setEditContactId(null);
+  };
+
   return (
     <div>
       <div className="form">
@@ -137,6 +141,7 @@ const Form = () => {
                         setNewMobile={setNewMobile}
                         updateContact={updateContact}
                         contact={contact}
+                        handleCancleClick={handleCancleClick}
                       />
                     ) : (
                       <ReadOnlyRows

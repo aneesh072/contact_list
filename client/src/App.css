@@ -70,8 +70,25 @@
 }
 
 .contact-btn #delete {
-  background-color: red;
+  background-color: none;
+  color: red;
   border: none;
-  border-radius: 10px;
+  height: 30px;
+}
+
+.edited-btn {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: -12px 0 0 -12px;
+  justify-content: center;
+  align-items: center;
+}
+
+#save {
+  padding: 4px;
+  margin-right: 5px;
+}
+
+#cancel {
   padding: 4px;
 }
