@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const ContactModel = require('./models/Contacts');
+require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
@@ -60,6 +61,6 @@ app.delete('/delete/:id', async (req, res) => {
   res.send('Itme Deleted');
 });
 
-app.listen(3003, () => {
+app.listen(process.env.PORT || 3003, () => {
   console.log('You are connected');
 });
